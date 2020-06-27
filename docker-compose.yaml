@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  vscode:
+    build: vscode
+    ports:
+      - 8080:8080

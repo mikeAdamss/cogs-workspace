@@ -1,4 +1,8 @@
 #cloudbuild.yaml
 steps:
+# build the container image
 - name: 'docker/compose:1.19.0'
   args: ['up', '-d']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/work-env/cogs-container']

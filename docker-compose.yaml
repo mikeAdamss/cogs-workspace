@@ -3,6 +3,5 @@ version: '3'
 services:
   vscode:
     build: vscode
-    network_mode: bridge
     ports:
       - 8080:8080

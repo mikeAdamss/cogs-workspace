@@ -4,5 +4,5 @@ steps:
 - name: 'docker/compose:1.19.0'
   args: ['up', '-d']
 # Push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'docker/compose:1.19.0'
   args: ['push', 'gcr.io/work-env/cogs-container']

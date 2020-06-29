@@ -2,7 +2,7 @@
 steps:
 # build the container image
 - name: 'docker/compose:1.19.0'
-  args: ['up', '-d', '-t', 'gcr.io/work-env/cogs-container']
-# Push the container image to Container Registry
-- name: 'docker/compose:1.19.0'
-  args: ['push', 'gcr.io/work-env/cogs-container']
+  args: ['up', '-d', '-t']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'workspace_app:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
